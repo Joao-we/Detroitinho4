@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #fbfb20;
+  line-height: 1.4;
+  min-height: auto;
+}
+
+header {
+  background-color: #000000;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  border-bottom: 2px solid #fbfb20;
+  font-size: 20px;
+}
+
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.25s;
+}
+
+
+header a:hover {
+  color: #fbfb20;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+
+header a.ativo {
+  color: #fbfb20;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+
+header img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+.menu-icon {
+      width: 40px;
+      cursor: pointer;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      z-index: 998;
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #222;
+      overflow-x: hidden;
+      transition: 0.4s ease;
+      padding-top: 60px;
+      z-index: 999;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar a {
+      padding: 10px 30px;
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      font-size: 18px;
+      transition: 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      font-size: 36px;
+      cursor: pointer;
+    }
+
+    .instagram {
+  padding: 20px;
+  display: flex;
+   background: rgb(255, 255, 255); 
+  color: black;
+  width: 120px;
+  text-decoration: none;
+  margin: 68px auto;
+  height: 90px;
+  border-radius: 15px;
+  justify-content: center;
+}
+
+.instagram:hover {
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+}
+
+.whats {
+  padding: 20px;
+  display: flex;
+  background-color: white;
+  color: black;
+  width: 120px;
+  text-decoration: none;
+  margin: 68px auto;
+  height: 90px;
+  border-radius: 15px;
+  justify-content: center;
+  gap: 15px
+}
+
+
+.whats:hover {
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+  
+}
+
+.agen {
+  padding: 20px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  width: 120px;
+  text-decoration: none;
+  margin: 68px auto;
+  height: 90px;
+  border-radius: 15px;
+  justify-content: center;
+}
+
+.agen:hover {
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+}
+
+.local {
+  padding: 20px;
+  display: flex;
+  background-color: white;
+  color: black;
+  width: 120px;
+  text-decoration: none;
+  margin: 68px auto;
+  height: 90px;
+  border-radius: 15px;
+  justify-content: center;
+}
+
+.local:hover {
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+}
+
+
+
+footer {
+  background-color: #fbfb20;
+  color: #000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+  padding: 30px;
+  margin-top: 130px;
+}
+
+@media (max-width: 767px) {
+  header {
+    width: auto;
+    height: auto;
+    gap: 30px;                
+    padding: 10px;
+    font-size: 16px;          
+  }
+
+
+  header img {
+    width: 60px;
+    height: 60px;
+  }
+
+
+  header a {
+    font-size: 15px;
+  }
+
+
+  div {
+    display: flex;
+    max-width: 570px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .agen img {
+    width: 50px;
+  }
+
+  .instagram img {
+    width: 70px;
+  }
+
+  .local img {
+    width: 50px;
+  }
+
+  .whats img {
+    width: 40px;
+  }
+}
+
+@media (max-width: 468px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+
+  header img {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0;
+  }
+
+
+  header a {
+    display: block;          
+    width: 90%;
+    text-align: center;      
+    font-size: 8px;          
+    padding: 8px 0;
+  }
+
+  body{
+    min-height: auto;
+  }
+
+
+  .menu-icon {
+    width: 35px;
+    top: 12px;
+    right: 15px;
+    display: block;
+  }
+
+  /* caixa dos botões */
+  .botao {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+  }
+
+  /* botoes */
+  .instagram, .whats, .agen, .local {
+    width: 140px;
+    height: 75px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  /* imagens dos botões */
+  .instagram img {
+    width: 55px;
+  }
+  .whats img {
+    width: 35px;
+  }
+  .agen img {
+    width: 35px;
+  }
+  .local img {
+    width: 30px;
+  }
+
+  /* rodapé */
+  footer {
+    font-size: 12px;
+    padding: 15px;
+    margin-top: 80px;
+    text-align: center;
+  }
+}
+

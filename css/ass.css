@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  
+  body {
+    background-color: #000;
+    color: #fbfb20;
+    margin: 0;
+    line-height: 1.4;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  
+  
+  header {
+    background-color: #000;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    border-bottom: 2px solid #fbfb20;
+    font-size: 20px;
+  }
+  
+  
+  header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  
+  header a:hover {
+    color: #fbfb20;
+    transition: all 0.5s ease;
+    transform: scale(1.3);
+  }
+  
+  
+  header a.ativo {
+    color: #fbfb20;
+    text-decoration: underline;
+  }
+  
+  
+  header img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  }
+  
+    
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-bottom: 2px solid #fbfb20;
+    }
+    
+    .banner img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    
+    .texto-banner {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      color: #fff;
+    }
+    
+    .texto-banner p {
+      font-size: 17px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    
+    .planos {
+      padding: 40px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .card {
+      background-color: #c4cf32;
+      color: #fff;
+      width: 220px;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    .card h3 {
+      font-size: 20px;
+    }
+    
+    .card .preco {
+      font-size: 25px;
+      margin: 30px 0;
+    }
+    
+    .card ul {
+      margin-top: 10px;
+      text-align: left;
+      padding-left: 15px;
+    }
+    
+    .card li {
+      font-size: 15px;
+      margin: 5px 0;
+    }
+    
+   
+    .informacoes {
+      background-color: #111;
+      text-align: left;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 10px;
+    }
+    
+    .informacoes h4 {
+      color: #fbfb20;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .informacoes ul {
+      margin-left: 25px;
+      color: #fff;
+      line-height: 1.6;
+    }
+    
+    
+    .pagamento {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    
+    .pagamento h4 {
+      color: #fbfb20;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    
+    .pagamento p {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+    
+    .btn-assinar {
+      background-color: #fbfb20;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    
+    .btn-assinar:hover {
+        
+      transform: scale(1.1);
+    }
+  
+  
+    footer {
+      background-color: #fbfb20;
+      color: #000;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      font-weight: bold;
+      padding: 30px;
+    }
+
+    
+/* =============================== */
+/* 📱 RESPONSIVIDADE — ATÉ 768px  */
+/* =============================== */
+@media (max-width: 768px) {
+  header {
+    width: auto;
+    height: auto;
+    gap: 30px;                
+    padding: 10px;
+    font-size: 16px;          
+  }
+
+
+  header img {
+    width: 60px;
+    height: 60px;
+  }
+
+
+  header a {
+    font-size: 15px;
+  }
+
+
+  /* BANNER */
+  .banner {
+    height: 240px;
+  }
+
+  .banner img {
+    height: 240px;
+  }
+
+  .texto-banner p {
+    font-size: 15px;
+    max-width: 95%;
+  }
+
+  /* CARDS */
+  .planos {
+    gap: 15px;
+  }
+
+  .card {
+    width: 260px;
+  }
+
+  /* SEÇÃO DE INFORMAÇÕES */
+  .informacoes {
+    width: 90%;
+  }
+
+  /* PAGAMENTO */
+  .pagamento {
+    width: 90%;
+  }
+}
+
+
+/* =============================== */
+/* 📱 RESPONSIVIDADE — ATÉ 478px  */
+/* =============================== */
+@media (max-width: 478px) {
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+
+  header img {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0;
+  }
+
+
+  header a {
+    display: block;          
+    width: 90%;
+    text-align: center;      
+    font-size: 8px;          
+    padding: 8px 0;
+  }
+
+  /* BANNER */
+  .banner {
+    height: 180px;
+  }
+
+  .banner img {
+    height: 180px;
+  }
+
+  .texto-banner p {
+    font-size: 13px;
+  }
+
+  /* CARDS */
+  .card {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card .preco {
+    font-size: 22px;
+  }
+
+  /* INFORMAÇÕES */
+  .informacoes {
+    width: 92%;
+    padding: 20px;
+  }
+
+  /* BOTÃO */
+  .btn-assinar {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  /* FOOTER */
+  footer {
+    font-size: 14px;
+    padding: 20px;
+  }
+}    

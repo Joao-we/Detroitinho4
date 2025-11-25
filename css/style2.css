@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #fbfb20;
+  line-height: 1.4;
+  min-height: auto;
+}
+
+header {
+  background-color: #000000;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  border-bottom: 2px solid #fbfb20;
+  font-size: 20px;
+}
+
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.25s;
+}
+
+
+header a:hover {
+  color: #fbfb20;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+
+header a.ativo {
+  color: #fbfb20;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+
+header img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+ }
+ 
+ .form-servico{
+  max-width: 100%;
+  /* margin: 15px 350px 350px 350px ; */
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  
+}
+.form-servico input,
+.form-servico select{
+  padding: 20px;
+  font-size: 27px;
+  border: none;
+  border-radius: 6px;
+  background: #dad8d8;
+  color: black;
+  box-sizing: border-box;
+}
+.calendario{
+  width: 100%;
+  padding: 20px;
+  font-size: 30px;
+  border: 3px solid black;
+  border-radius: 20px;
+}
+textarea{
+  background: #dad8d8;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 3px solid black;
+}
+.equipe{
+max-width: 820px;      
+margin: 20px auto;    
+padding: 10 12px;      
+}
+.equipe h2{
+color: #ffd400;      
+font-size: 23px;
+font-weight: 800;
+margin: 6px 0 12px 0;
+}
+.botoes{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 30px;              
+}
+.botoes input[type="radio"]{
+position: absolute;
+opacity: 0;
+pointer-events: none;
+}
+.membro{
+box-sizing: border-box;
+flex: 0 0 calc(50% - 16px);
+background: #3b4446;      
+border-radius: 12px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+min-height: 100px;        
+}
+.membro .nome{
+color: #ffd400;          
+font-weight: 800;
+font-size: 28px;
+letter-spacing: 1px;
+}
+.membro .obs{
+color: #cfcfcf;
+font-size: 12px;
+margin-top: 8px;
+}
+.botoes input[type="radio"]:checked + .membro{
+transform: translateY(-4px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.6), 0 0 0 6px rgba(255,212,0,0.06);
+background: #9da87d;
+}
+.btn-finalizar {
+margin-top: 30px;
+padding: 30px;
+width: 30%;
+align-self: center;
+border: none;
+border-radius: 10px;
+background: yellow;
+color: #000;
+font-size: 20px;
+font-weight: bold;
+}
+.botao-link{
+  display: inline-block;
+  text-decoration: none;
+  color: transparent;
+  position: absolute;
+}
+
+.btn-finalizar:hover {
+background: #e6d300;
+}
+footer{
+background-color: #fbfb20;
+color: #000;
+align-items: center;
+justify-content: center;
+display: flex;
+font-weight: bold;
+padding: 30px;
+}
+@media (max-width: 768px) {
+  .form-servico input,
+  .form-servico select {
+    font-size: 20px;
+    padding: 14px;
+    margin: 7px;
+  }
+  .textog{
+    font: 10px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 98.7%;
+  }
+  .calendario{
+    font: 10px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 98%;
+  }
+  .botoes {
+    flex-direction: row;
+    gap: 10px;
+    margin: 1px;
+  }
+  .membro {
+    flex: 0 0 45%;      
+    min-height: 90px;
+  }
+
+  .membro .nome {
+    font-size: 24px;
+  }
+
+  .btn-finalizar {
+    width: 50%;        
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+
+@media (max-width: 468px) {
+
+  .form-servico input,
+  .form-servico select {
+    font-size: 20px;
+    padding: 14px;
+    margin: 7px;
+  }
+  .textog{
+    font: 10px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 98%;
+  }
+  .calendario{
+    font: 10px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 97%;
+  }
+  .botoes {
+    flex-direction: row;
+    gap: 16px;
+    margin: 7px;
+  }
+
+  .membro {
+    flex: 0 0 100%;  
+    min-height: 80px;
+  }
+
+  .membro .nome {
+    font-size: 22px;
+  }
+
+  .btn-finalizar {
+    width: 80%;    
+    font-size: 16px;
+    padding: 18px;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    gap: 30px;                
+    padding: 10px;
+    font-size: 16px;          
+  }
+
+  header img {
+    width: 60px;
+    height: 60px;
+  }
+
+  header a {
+    font-size: 15px;
+  }
+}
+@media (max-width: 468px) {
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 9px;
+  }
+
+  header img {
+    width: 50px;
+    height: 50px;
+    margin: 5px
+  }
+
+  header a {
+    display: block;          
+    width: 99%;
+    text-align: center;      
+    font-size: 7px;          
+    padding: 8px
+  }
+}
+footer {
+  font-size: 14px;
+  padding: 18px;
+  text-align: center;
+}

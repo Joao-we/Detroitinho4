@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #000000;
+  color: #fbfb20;
+  line-height: 1.4;
+  min-height: 170vh;
+}
+
+header {
+  background-color: #000000;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  border-bottom: 2px solid #fbfb20;
+  font-size: 20px;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.25s;
+}
+
+header a:hover {
+  color: #fbfb20;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+header a.ativo {
+  color: #fbfb20;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+header img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.ava {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 180px;
+  left: 100px;
+}
+
+.ava label {
+  font-weight: bold;
+}
+
+.ava input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to right, #dcdcdc, #f5f5f5);
+  color: #000;
+  font-size: 16px;
+  outline: none;
+}
+
+.caixas {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  color: goldenrod;
+  position: relative;
+  font-size: 48px;
+}
+
+.quadrado1 {
+  width: 200px;
+  height: 200px;
+  background-color: #dcdcdc;
+  border-radius: 30px;
+  margin: 50px;
+
+}
+
+.quadrado2 {
+  width: 200px;
+  height: 200px;
+  background-color: #dcdcdc;
+  border-radius: 30px;
+  margin: 50px;
+}
+
+.quadrado3 {
+  width: 200px;
+  height: 200px;
+  background-color: #dcdcdc;
+  border-radius: 30px;
+  margin: 50px;
+}
+
+.quadrado4 {
+  width: 200px;
+  height: 200px;
+  background-color: #dcdcdc;
+  border-radius: 30px;
+  margin: 50px;
+}
+
+
+@media (max-width: 768px) {
+
+
+  header {
+    gap: 30px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  header img {
+    width: 60px;
+    height: 60px;
+  }
+
+  header a {
+    font-size: 15px
+  }
+
+  p {
+    position: relative;
+    font-size: 30px;
+    left: 7px;
+  }
+
+  .quadrado1 {
+    width: 150px;
+    height: 150px;
+    margin: 20px 10px;
+  }
+
+  .quadrado2 {
+    width: 150px;
+    height: 150px;
+    margin: 20px 10px;
+
+  }
+
+  .quadrado3 {
+    width: 150px;
+    height: 150px;
+    margin: 20px 10px;
+
+  }
+
+  .quadrado4 {
+    width: 150px;
+    height: 150px;
+    margin: 20px 10px;
+
+  }
+}
+
+
+@media (max-width: 468px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  header img {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0;
+  }
+
+  header a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    padding: 8px 0;
+  }
+  .caixas{
+    left: 7px;
+  }
+  p{
+    font-size: 20px;
+  }
+  .quadrado1 {
+    width: 96px;
+    height: 96px;
+    margin:10px;
+  }
+
+  .quadrado2 {
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+  }
+
+  .quadrado3 {
+    width: 96px;
+    height: 96px;
+    margin: 10px;
+  }
+  .quadrado4 {
+    width: 96px;
+    height: 96px;
+    margin: 10px
+  }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento Detroit</title>
+  <link rel="stylesheet" href="../css/style2.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html">HOME</a>
+    <a href="avaliaçao.html">AVALIAÇÃO</a>
+    <a href="#" class="ativo">SERVIÇOS</a>
+    <img src="./assets/cortado.png" alt="Logo Barbearia Detroit">
+    <a href="curso.html">CURSOS</a>
+    <a href="CONT.html">CONTATOS</a>
+    <a href="ass.html">ASSINATURA</a>
+  </header>
+
+  <main>
+    <form class="form-servico">
+      <!-- Nome d0 cliente -->
+      <input type="text" placeholder="NOME COMPLETO" required>
+      <!-- Serviço -->
+      <select required>
+        <option value="">SERVIÇO</option>
+        <option value="A. AMERICANO">A. AMERICANO</option>
+        <option value="CORTE MÁQUINA/PENTE">CORTE MÁQUINA/PENTE</option>
+        <option value="CORTE MÁQUINA/TESOURA">CORTE MÁQUINA/TESOURA</option>
+        <option value="CORTE TESOURA">CORTE TESOURA</option>
+        <option value="DEPILAÇÃO NASAL">DEPILAÇÃO NASAL</option>
+        <option value="DEPILAÇÃO ORELHA">DEPILAÇÃO ORELHA</option>
+        <option value="ESCOVA">ESCOVA</option>
+        <option value="FREESTYLE">FREESTYLE</option>
+        <option value="HIDRATAÇÃO">HIDRATAÇÃO</option>
+        <option value="HIDRATAÇÃO BARBA">HIDRATAÇÃO BARBA</option>
+        <option value="LAVAGEM DE CABELO">LAVAGEM DE CABELO</option>
+        <option value="LUZES">LUZES</option>
+        <option value="MATIZAÇÃO">MATIZAÇÃO</option>
+        <option value="NAVALHADO">NAVALHADO</option>
+        <option value="PEZINHO">PEZINHO</option>
+        <option value="PIGMENTAÇÃO CABELO">PIGMENTAÇÃO CABELO</option>
+        <option value="PLATINADO">PLATINADO</option>
+        <option value="PREENCHIMENTO BARBA">PREENCHIMENTO BARBA</option>
+        <option value="PROGRESSIVA">PROGRESSIVA</option>
+        <option value="SCALPCLEAR">SCALP’CLEAR</option>
+        <option value="SELAGEM">SELAGEM</option>
+        <option value="SELAGEM BARBA">SELAGEM BARBA</option>
+        <option value="SOMBRANCELHA">SOMBRANCELHA</option>
+        <option value="TERAPIA CONE HINDU">TERAPIA CONE HINDU</option>
+        <option value="TERAPIA FACIAL">TERAPIA FACIAL</option>
+
+      </select>
+
+      <!-- Observações dos serviços -->
+      <textarea class="textog" name="mensagem" id="obs" placeholder="Observações ao serviço (alergias, restrições, etc)" cols="30" rows="3"></textarea>    
+
+      <!-- Barbeiros/escolha -->
+      <select required>
+        <option value="">BARBEIRO</option>
+        <option value="BERNARDO">BERNARDO</option>
+        <option value="BRUNO">BRUNO</option>
+        <option value="LUAN">LUAN</option>
+        <option value="RENAN">RENAN</option>
+        <option value="TELMA">TELMA</option>
+        <option value="VANILSON">VANILSON</option>
+
+      </select>
+
+      <!-- Calendario de agendamento -->
+      <input class="calendario" type="date" id="dia" name="dia" class="calendario" required>
+
+      <!-- Horário de atendimento-->
+      <select required>
+        <option value="">HORÁRIO</option>
+        <option value="09:00">09:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="19:00">19:00</option>
+        <option value="20:00">20:00</option>
+      </select>
+
+      <!-- Nossa Equipe -->
+      <section class="equipe">
+        <h2>NOSSA EQUIPE</h2>
+        <div class="botoes">
+          <input type="radio" id="telma" name="barbeiroEquipe">
+          <label for="telma" class="membro">
+            <span class="nome">BERNARDO</span>
+            <span class="obs">Sem observação</span>
+          </label>
+
+          <input type="radio" id="bruno" name="barbeiroEquipe">
+          <label for="bruno" class="membro">
+            <span class="nome">BRUNO</span>
+            <span class="obs">Sem observação</span>
+          </label>
+
+          <input type="radio" id="vanilson" name="barbeiroEquipe">
+          <label for="vanilson" class="membro">
+            <span class="nome">LUAN</span>
+            <span class="obs">Sem observação</span>
+          </label>
+
+          <input type="radio" id="renan" name="barbeiroEquipe">
+          <label for="renan" class="membro">
+            <span class="nome">RENAN</span>
+            <span class="obs">Sem observação</span>
+          </label>
+
+          <input type="radio" id="luan" name="barbeiroEquipe">
+          <label for="luan" class="membro">
+            <span class="nome">TELMA</span>
+            <span class="obs">Sem observação</span>
+          </label>
+
+          <input type="radio" id="bernardo" name="barbeiroEquipe">
+          <label for="bernardo" class="membro">
+            <span class="nome">VANILSON</span>
+            <span class="obs">Sem observação</span>
+          </label>
+        </div>
+      </section>
+      <!-- Finaliza agendamento -->
+      <button type="submit" class="btn-finalizar">FINALIZAR AGENDAMENTO
+        <a href="/home/index.html" class="botao-link">VOLTAR</a>
+      </button>
+    </form>
+  </main>
+   <!-- Rodape -->
+  <footer>
+    <p>BARBEARIA DETROIT 2025 &copy; Todos os direitos reservados</p>
+  </footer>
+  <script type="module" src="/agend.js"></script>
+</body>
+</html>

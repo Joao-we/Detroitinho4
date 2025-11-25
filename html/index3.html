@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Detroit Barber</title>
+  <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2>Cadastro</h2>
+
+      <form>
+        <div class="input-row">
+          <div class="input-box">
+            <label for="fullname">Nome Completo</label>
+            <input type="text" id="fullname" placeholder="Digite seu nome completo" required>
+          </div>
+
+          <div class="input-box">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" placeholder="Crie um nome de usuário" required>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-box">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Digite seu email" required>
+          </div>
+
+          <div class="input-box">
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" placeholder="(00) 00000-0000">
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-box">
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="Crie sua senha" required>
+          </div>
+
+          <div class="input-box">
+            <label for="confirm">Confirmar Senha</label>
+            <input type="password" id="confirm" placeholder="Confirme sua senha" required>
+          </div>
+        </div>
+
+        <!-- Gênero sem "Prefiro não dizer" -->
+        <div class="gender-box">
+          <label>Gênero</label>
+          <div class="gender-options">
+            <label><input type="radio" name="gender" value="masculino"> Masculino</label>
+            <label><input type="radio" name="gender" value="feminino"> Feminino</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Cadastrar</button>
+
+        <p class="login-link">
+          Já tem uma conta? <a href="/cadastro/index2.html">Entrar</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

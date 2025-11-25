@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Detroit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="ativo">HOME</a>
+      <a href="avaliaçao.html">AVALIAÇÃO</a>
+      <a href="serv.html">SERVIÇO</a>
+      <img src="./assets/cortado.png" alt="" />
+      <a href="curso.html">CURSO</a>
+      <a href="CONT.html">CONTATOS</a>
+      <a href="ass.html">ASSINATURA</a>
+      <!-- Ícone do menu (hambúrguer) -->
+      <img
+        src="/home/assets/barrasmenu2.png"
+        class="menu-icon"
+        onclick="openMenu()"
+        alt="Menu"
+      />
+    </header>
+
+    <!-- Menu lateral (abre da direita) -->
+    <div id="menuLateral" class="sidebar">
+      <span class="closebtn" onclick="closeMenu()">&times;</span>
+      <a href="/cadastro/index2.html">Cadastre-se</a>
+      <a href="/agendamento/agend.html">Agende Agora</a>
+      <a href="/admin/admin.html">Admin Page</a>
+    </div>
+
+    <!-- Home BackGround -->
+    <div class="homebg"></div>
+
+    <div class="vanilson-img">
+      <img src="assets/vanilsoncortado.jpg" alt="" class="vanilsontam" />
+      <div class="textcard1">
+        <h2>Nossa História</h2>
+        <p>
+          Me chamo Vanilson Silva, sou empresário do ramo de Barbearia, desde
+          2018. Desde muito novo, trabalhei em busca de conquistar meus
+          objetivos e sonhos, sempre tive um lado empreendedor, e foi em 2016,
+          que um amigo me apresentou a um curso de cabeleireiro, foi onde me
+          encontrei, descobri uma paixão que nem eu mesmo sabia que poderia
+          existir. Em 2018 abri a minha barbearia na cidade Ocidental, tudo com
+          muito trabalho e dedicação. Cada detalhe pensado para um atendimento
+          de qualidade. Com 6 meses de trabalho, nós fomos reconhecidos e
+          ganhamos o prêmio de melhor barbearia do entorno pela empresa top
+          marketing concorrendo com jardim ingá e ocidental, depois em 2022
+          ganhamos o prêmio de melhor barbearia da cidade ocidental, e hoje com
+          6 anos, a minha empresa está estruturada gerando empregos e
+          proporcionando alegria, e alto estima aos nossos clientes. Tudo isso
+          devo a mim mesmo por minha persistência e determinação, para ir em
+          busca do meu sonho. Ainda há muito chão pela frente. E sou grato a
+          cada fase que passei e que ainda vou percorrer. Prazer eu sou Vanilson
+          Silva dono e proprietário da Barbearia Detroit.
+        </p>
+      </div>
+    </div>
+
+    <div class="corte-img">
+      <div class="textcard2">
+        <h2>Sobre Nós</h2>
+        <p>
+          Na Barbearia Detroit, vamos muito além do corte. Somos especialistas
+          em te apresentar a sua melhor versão, oferecendo uma experiência
+          completa de cuidado, estilo e bem-estar. Com uma equipe altamente
+          qualificada e apaixonada pelo que faz, unimos técnica, estilo e
+          atendimento personalizado para todos os públicos entregando resultados
+          que surpreendem e satisfaçam. Nosso espaço foi criado para
+          proporcionar conforto, confiança e aquele momento só seu, com o melhor
+          da barbearia tradicional e das terapias modernas.
+        </p>
+      </div>
+      <img src="assets/chatgpt.jpg" alt="" class="cortetam" />
+    </div>
+
+    <div class="autismoinf-img">
+      <img src="assets/autismoinfantil2.jpg" alt="" class="autismoinftam" />
+      <div class="textcard3">
+        <h2>Corte com cuidado, Atenção e Respeito</h2>
+        <p>
+          Na nossa barbearia, entendemos que cada pessoa é única. Por isso,
+          oferecemos um ambiente acolhedor, adaptado e com profissionais
+          treinados para atender crianças, adolescentes e adultos no espectro
+          autista. Aqui o tempo, a paciência e o conforto são prioridade, porque
+          mais do que um corte de cabelo, queremos proporcionar uma experiência
+          positiva e tranquila.
+        </p>
+      </div>
+    </div>
+
+    <div class="localdet-img">
+      <div class="textcard4">
+        <h2>Um Espaço Pensado Para Você</h2>
+        <p>
+          Nossa barbearia oferece um ambiente calmo, arejado e acolhedor, ideal
+          para quem está no espectro autista e busca conforto durante o
+          atendimento. O espaço foi planejado para reduzir estímulos, com
+          ventilação natural, iluminação suave e profissionais capacitados, que
+          respeitam o tempo e as necessidades de cada cliente.
+        </p>
+      </div>
+      <img src="assets/LOCALDETROIT.jpg" alt="" class="localdettam" />
+    </div>
+
+    <div class="meninoc-img">
+      <img src="assets/meninocorte.jpg" alt="" class="meninoctam" />
+      <div class="textcard5">
+        <h2>Cuidado Especial Para Todos</h2>
+        <p>
+          Na Barbearia Detroit o espaço é pensado para acolher e atender
+          crianças, mulheres e homens. Oferecemos um ambiente agradável, arejado
+          e confortável, onde cada cliente é tratado com atenção e respeito. Com
+          profissionais capacitados e cuidadosos, buscamos garantir uma
+          experiência tranquila e personalizada, valorizando o estilo e as
+          necessidades de cada pessoa.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>BARBEARIA DETROIT 2025 &copy; todos os direitos reservados</p>
+    </footer>
+
+    <!-- Script JS -->
+    <script>
+      function openMenu() {
+        document.getElementById("menuLateral").style.width = "250px";
+      }
+
+      function closeMenu() {
+        document.getElementById("menuLateral").style.width = "0";
+      }
+    </script>
+    <script src="/main.js" type="module"></script>
+  </body>
+</html>
