@@ -11,6 +11,7 @@ dotenv.config({ path: "./variaveis.env" });
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const port = process.env.PORT || 5432;
 
 // Middlewares
 app.use(cors());
