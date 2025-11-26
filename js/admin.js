@@ -1,93 +1,94 @@
-const API_BASE = "/api/agendamentos";
+// Espera o carregamento completo do DOM antes de executar o cÃ³digo
+document.addEventListener("DOMContentLoaded", async () => {
+  // Seleciona o corpo da tabela onde os agendamentos serÃ£o exibidos
+  const tbody = document.querySelector("#bookingsTable tbody");
 
-const form = document.getElementById("form-agendamento");
-const tabela = document.querySelector("#tabela-agendamentos tbody");
+  // FunÃ§Ã£o que busca os agendamentos no servidor e exibe na tabela
+  async function carregarAgendamentos() {
+      // Limpa a tabela antes de inserir os novos dados
+      tbody.innerHTML = "";
+      try {
+          // Faz uma requisiÃ§Ã£o GET para o backend local
+          const res = await fetch("http://localhost:3000/agendamentos");
+          const agendamentos = await res.json();
 
-// Carregar agendamentos na tabela
-async function carregarAgendamentos() {
-  tabela.innerHTML = "";
-  try {
-    const res = await fetch(API_BASE);
-    const agendamentos = await res.json();
+          // Percorre cada agendamento retornado e cria uma linha na tabela
+          agendamentos.forEach(a => {
+              const tr = document.createElement("tr");
+              tr.innerHTML = `
+                  <td>${a.nome}</td>
+                  <td>${a.telefone}</td>
+                  <td>${a.servico}</td>
+                  <td>${a.data}</td>
+                  <td>${a.horario}</td>
+                  <td>
+                      <button class="edit-btn" data-id="${a.id}">Editar</button>
+                      <button class="delete-btn" data-id="${a.id}">Deletar</button>
+                  </td>
+              `;
+              // Adiciona a linha na tabela
+              tbody.appendChild(tr);
+          });
 
-    agendamentos.forEach(a => {
-      const tr = document.createElement("tr");
-      tr.innerHTML = `
-        <td data-label="Cliente">${a.cliente}</td>
-        <td data-label="Telefone">${a.telefone}</td>
-        <td data-label="Serviço">${a.servico}</td>
-        <td data-label="Profissional">${a.profissional}</td>
-        <td data-label="Data">${a.data}</td>
-        <td data-label="Hora">${a.hora}</td>
-        <td data-label="Observações">${a.observacoes || ""}</td>
-        <td data-label="Ações">
-          <button class="btn btn-edit" onclick="editarAgendamento(${a.id})">Editar</button>
-          <button class="btn btn-delete" onclick="deletarAgendamento(${a.id})">Excluir</button>
-        </td>
-      `;
-      tabela.appendChild(tr);
-    });
-  } catch (err) {
-    console.error(err);
+          // Depois de criar as linhas, adiciona os eventos nos botÃµes
+          adicionarEventos();
+      } catch (erro) {
+          alert("Erro ao carregar os agendamentos: " + erro);
+      }
   }
-}
 
-// Adicionar novo agendamento
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
+  // FunÃ§Ã£o que adiciona os eventos aos botÃµes de editar e deletar
+  function adicionarEventos() {
 
-  try {
-    await fetch(API_BASE, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
-    form.reset();
-    carregarAgendamentos();
-  } catch (err) {
-    console.error(err);
+      // --- DELETE ---
+      // Seleciona todos os botÃµes de deletar e adiciona evento de clique
+      document.querySelectorAll(".delete-btn").forEach(btn => {
+          btn.addEventListener("click", async () => {
+              const id = btn.dataset.id;
+
+              // Confirma antes de deletar
+              if (confirm("Deseja realmente deletar este agendamento?")) {
+                  try {
+                      const res = await fetch(`http://localhost:3000/agendamentos/${id}`, {
+                          method: "DELETE"
+                      });
+                      const texto = await res.text();
+                      alert(texto);
+                      // Recarrega a lista apÃ³s deletar
+                      carregarAgendamentos();
+                  } catch (erro) {
+                      alert("Erro ao deletar: " + erro);
+                  }
+              }
+          });
+      });
+
+      // --- PATCH ---
+      // Permite editar o horÃ¡rio do agendamento (pode mudar depois para editar mais campos)
+      document.querySelectorAll(".edit-btn").forEach(btn => {
+          btn.addEventListener("click", async () => {
+              const id = btn.dataset.id;
+              const novoHorario = prompt("Digite o novo horÃ¡rio (HH:MM):");
+
+              if (novoHorario) {
+                  try {
+                      const res = await fetch(`http://localhost:3000/agendamentos/${id}`, {
+                          method: "PATCH",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ horario: novoHorario })
+                      });
+                      const texto = await res.text();
+                      alert(texto);
+                      // Recarrega a lista apÃ³s atualizar
+                      carregarAgendamentos();
+                  } catch (erro) {
+                      alert("Erro ao atualizar: " + erro);
+                  }
+              }
+          });
+      });
   }
+
+  // Quando a pÃ¡gina carregar, busca e exibe todos os agendamentos
+  carregarAgendamentos();
 });
-
-// Deletar agendamento
-async function deletarAgendamento(id) {
-  if (!confirm("Deseja realmente excluir este agendamento?")) return;
-  try {
-    await fetch(`${API_BASE}/${id}`, { method: "DELETE" });
-    carregarAgendamentos();
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-// Editar agendamento (preenche o formulário)
-async function editarAgendamento(id) {
-  try {
-    const res = await fetch(API_BASE);
-    const agendamentos = await res.json();
-    const a = agendamentos.find(x => x.id === id);
-    if (!a) return alert("Agendamento não encontrado.");
-
-    form.cliente.value = a.cliente;
-    form.telefone.value = a.telefone;
-    form.servico.value = a.servico;
-    form.profissional.value = a.profissional;
-    form.data.value = a.data;
-    form.hora.value = a.hora;
-    form.observacoes.value = a.observacoes || "";
-
-    // Remove o antigo ao salvar
-    deletarAgendamento(id);
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-// Expor funções globalmente para HTML
-window.deletarAgendamento = deletarAgendamento;
-window.editarAgendamento = editarAgendamento;
-
-// Carregar ao abrir a página
-window.addEventListener("DOMContentLoaded", carregarAgendamentos);
